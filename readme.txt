@@ -1,10 +1,10 @@
-=== Catalog Visibility Manager for WooCommerce ===
+=== fliix Catalog Visibility Manager for WooCommerce ===
 Contributors: fliix
 Tags: woocommerce, product categories, catalog visibility, hide products, storefront
 Requires at least: 5.8
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 2.2.1
+Stable tag: 2.2.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +12,7 @@ Manage catalog visibility for WooCommerce: hide categories and/or products on th
 
 == Description ==
 
-**Catalog Visibility Manager for WooCommerce** lets you control what shoppers see in your shop without deleting products or categories.
+**fliix Catalog Visibility Manager for WooCommerce** lets you control what shoppers see in your shop without deleting products or categories.
 
 Use it for seasonal ranges, wholesale-only categories, work-in-progress catalogs, or any case where admin data should stay but the storefront should not show certain categories or products.
 
@@ -52,7 +52,7 @@ English (source) and German (`de_DE`) are included. See `languages/README.md` in
 == Installation ==
 
 1. Upload the plugin folder to `/wp-content/plugins/` or install from the WordPress.org plugin directory.
-2. Activate **Catalog Visibility Manager for WooCommerce**.
+2. Activate **fliix Catalog Visibility Manager for WooCommerce**.
 3. Install and activate **WooCommerce**.
 4. Open **WooCommerce → Settings → Products** and use the visibility tree section.
 
@@ -86,28 +86,6 @@ Contact the maintainer privately (see Author URI) rather than posting exploit de
 
 == Changelog ==
 
-= 2.2.0 =
+= 2.2.2 =
 
-* Rename to **Catalog Visibility Manager for WooCommerce** (distinctive name; WordPress.org slug `catalog-visibility-manager-for-woocommerce`)
-* Text domain updated to match the new slug
-* Removed `load_plugin_textdomain()` (WordPress.org language packs)
-* Valid Plugin URI; direct-access guards on plugin PHP files
-* Development `bin/` excluded from WordPress.org builds via `.distignore`
-
-= 2.1.1 =
-
-* Text domain aligned with prior slug; Tested up to WordPress 7.0; simplified category tree UI
-
-= 2.1.0 =
-
-* Require PHP 8.1+
-
-= 2.0.0 =
-
-* PSR-4 refactor, hierarchical admin tree, security and performance improvements
-
-== Upgrade Notice ==
-
-= 2.2.0 =
-
-New plugin name and slug for WordPress.org. Request slug reservation before upload if prompted. Visibility settings are unchanged.
+* Rename to **fliix Catalog Visibility Manager for WooCommerce**

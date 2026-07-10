@@ -1,7 +1,7 @@
 {
-  "name": "fliix-cloud/catalog-visibility-manager-for-woocommerce",
+  "name": "fliix-cloud/fliix-catalog-visibility-manager-for-woocommerce",
   "description": "Catalog Visibility Manager for WooCommerce: control storefront category and product visibility with a searchable admin tree.",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "type": "wordpress-plugin",
   "license": "GPL-2.0-or-later",
   "keywords": [
@@ -15,7 +15,7 @@
   ],
   "homepage": "https://www.fliix.cloud",
   "support": {
-    "issues": "https://wordpress.org/support/plugin/catalog-visibility-manager-for-woocommerce/",
+    "issues": "https://wordpress.org/support/plugin/fliix-catalog-visibility-manager-for-woocommerce/",
     "source": "https://www.fliix.cloud"
   },
   "authors": [

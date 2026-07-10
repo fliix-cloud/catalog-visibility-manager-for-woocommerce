@@ -1,2 +1,4 @@
 # Project exclude paths
 /vendor/composer/
+.idea
+build-release.ps1

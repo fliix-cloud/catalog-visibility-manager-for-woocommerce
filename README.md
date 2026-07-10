@@ -126,7 +126,7 @@ uninstall.php                        # Removes options on uninstall
 ```
 
 **Namespace:** `Fliix\HideCategoriesProducts\`  
-**Text domain / slug:** `catalog-visibility-manager-for-woocommerce`
+**Text domain / WordPress.org slug:** `fliix-category-product-hide-for-woocommerce`
 
 ---
 
@@ -136,15 +136,15 @@ Source strings are **English**. Bundled locales:
 
 | Locale | Files |
 |--------|--------|
-| Template | `languages/catalog-visibility-manager-for-woocommerce.pot` |
+| Template | `languages/fliix-category-product-hide-for-woocommerce.pot` |
 | English (US) | `…-en_US.po` / `.mo` (reference catalog) |
 | German | `…-de_DE.po` / `.mo` |
 
-WordPress loads `languages/catalog-visibility-manager-for-woocommerce-{locale}.mo` based on **Settings → General → Site Language**.
+WordPress loads `languages/fliix-category-product-hide-for-woocommerce-{locale}.mo` based on **Settings → General → Site Language**.
 
 ### Contribute a language via Pull Request
 
-1. Copy the `.pot` to `languages/catalog-visibility-manager-for-woocommerce-{locale}.po` (e.g. `fr_FR`).
+1. Copy the `.pot` to `languages/fliix-category-product-hide-for-woocommerce-{locale}.po` (e.g. `fr_FR`).
 2. Translate all `msgstr` values (Poedit recommended).
 3. Compile binary catalogs:
 

@@ -30,7 +30,7 @@ class CategoryHider {
 	 * Register hooks.
 	 */
 	public function register(): void {
-		add_filter( 'get_terms_args', $this->exclude_hidden_terms(...), 10, 2 );
+		add_filter( 'get_terms', $this->filter_hidden_terms(...), 10, 4 );
 		add_filter( 'get_the_terms', $this->hide_on_single_product(...), 11, 3 );
 	}
 
@@ -49,40 +49,41 @@ class CategoryHider {
 	}
 
 	/**
-	 * Exclude hidden categories from front-end term queries.
+	 * Remove hidden categories from front-end term query results.
 	 *
+	 * @param mixed                $terms      Query results.
+	 * @param mixed                $taxonomies Taxonomies being queried.
 	 * @param array<string, mixed> $args       Query arguments.
-	 * @param mixed                $taxonomies Taxonomies being queried (WP may pass string|array).
-	 * @return array<string, mixed>
+	 * @param mixed                $term_query Term query instance.
+	 * @return mixed
 	 */
-	public function exclude_hidden_terms( array $args, mixed $taxonomies = [] ): array {
+	public function filter_hidden_terms( mixed $terms, mixed $taxonomies = [], array $args = [], mixed $term_query = null ): mixed {
 		if ( $this->suspended ) {
-			return $args;
+			return $terms;
 		}
 
 		if ( is_admin() && ! wp_doing_ajax() ) {
-			return $args;
+			return $terms;
 		}
 
 		if ( ! $this->is_product_cat_query( $args, $taxonomies ) ) {
-			return $args;
+			return $terms;
 		}
 
 		$hidden = $this->options->get_hidden_category_ids();
-		if ( [] === $hidden ) {
-			return $args;
+		if ( [] === $hidden || ! is_array( $terms ) ) {
+			return $terms;
 		}
 
-		$existing = [];
-		if ( ! empty( $args['exclude'] ) ) {
-			$existing = is_array( $args['exclude'] )
-				? array_map( absint(...), $args['exclude'] )
-				: array_map( absint(...), explode( ',', (string) $args['exclude'] ) );
+		$field = isset( $args['fields'] ) ? (string) $args['fields'] : 'all';
+		foreach ( $terms as $key => $term ) {
+			$term_id = $this->get_result_term_id( $term, $key, $field );
+			if ( $term_id > 0 && in_array( $term_id, $hidden, true ) ) {
+				unset( $terms[ $key ] );
+			}
 		}
 
-		$args['exclude'] = array_values( array_unique( [ ...$existing, ...$hidden ] ) );
-
-		return $args;
+		return $terms;
 	}
 
 	/**
@@ -146,5 +147,24 @@ class CategoryHider {
 			is_array( $tax )  => in_array( 'product_cat', $tax, true ),
 			default           => false,
 		};
+	}
+
+	/**
+	 * Resolve a term ID from get_terms() result formats that expose term IDs.
+	 */
+	private function get_result_term_id( mixed $term, int|string $key, string $field ): int {
+		if ( $term instanceof WP_Term ) {
+			return (int) $term->term_id;
+		}
+
+		if ( is_numeric( $term ) && 'ids' === $field ) {
+			return absint( $term );
+		}
+
+		if ( is_numeric( $key ) && in_array( $field, [ 'id=>name', 'id=>slug', 'id=>parent' ], true ) ) {
+			return absint( $key );
+		}
+
+		return 0;
 	}
 }

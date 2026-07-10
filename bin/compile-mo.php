@@ -4,7 +4,7 @@
  *
  * Usage:
  *   php bin/compile-mo.php
- *   php bin/compile-mo.php languages/catalog-visibility-manager-for-woocommerce-de_DE.po
+ *   php bin/compile-mo.php languages/fliix-category-product-hide-for-woocommerce-de_DE.po
  *
  * @package Fliix\HideCategoriesProducts
  */
@@ -83,7 +83,7 @@ function parse_po( string $file ): array {
 	foreach ( $lines as $line ) {
 		$line = rtrim( $line, "\r" );
 
-		if ( '' === $line || str_starts_with( $line, '#' ) ) {
+		if ( '' === $line || 0 === strncmp( $line, '#', 1 ) ) {
 			if ( '' === $line ) {
 				$flush();
 			}

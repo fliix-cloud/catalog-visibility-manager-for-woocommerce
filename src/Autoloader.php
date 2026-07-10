@@ -28,7 +28,7 @@ final class Autoloader {
 
 		spl_autoload_register(
 			static function ( string $class ) use ( $prefix, $base_dir ): void {
-				if ( ! str_starts_with( $class, $prefix ) ) {
+				if ( 0 !== strncmp( $class, $prefix, strlen( $prefix ) ) ) {
 					return;
 				}
 

@@ -141,18 +141,24 @@ class OptionsRepository {
 			return $this->excluded_term_taxonomy_ids = [];
 		}
 
-		global $wpdb;
-
-		$placeholders = implode( ',', array_fill( 0, count( $term_ids ), '%d' ) );
-		// phpcs:disable WordPress.DB.PreparedSQLPlaceholders.UnfinishedPrepare, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, WordPress.DB.PreparedSQL.NotPrepared
-		$sql = $wpdb->prepare(
-			"SELECT term_taxonomy_id FROM {$wpdb->term_taxonomy}
-			WHERE taxonomy = %s AND term_id IN ($placeholders)",
-			'product_cat',
-			...$term_ids
+		$terms = get_terms(
+			[
+				'taxonomy'   => 'product_cat',
+				'hide_empty' => false,
+				'include'    => $term_ids,
+			]
 		);
-		$tt_ids = $sql ? $wpdb->get_col( $sql ) : [];
-		// phpcs:enable
+
+		if ( is_wp_error( $terms ) || ! is_array( $terms ) ) {
+			return $this->excluded_term_taxonomy_ids = [];
+		}
+
+		$tt_ids = [];
+		foreach ( $terms as $term ) {
+			if ( $term instanceof \WP_Term ) {
+				$tt_ids[] = absint( $term->term_taxonomy_id );
+			}
+		}
 
 		return $this->excluded_term_taxonomy_ids = array_values(
 			array_unique( array_map( absint(...), is_array( $tt_ids ) ? $tt_ids : [] ) )

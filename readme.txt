@@ -88,7 +88,7 @@ Contact the maintainer privately (see Author URI) rather than posting exploit de
 
 = 2.2.0 =
 
-* Rename to **Catalog Visibility Manager for WooCommerce** (distinctive name; slug `catalog-visibility-manager-for-woocommerce`)
+* Rename to **Catalog Visibility Manager for WooCommerce** (distinctive name; WordPress.org slug `fliix-category-product-hide-for-woocommerce`)
 * Text domain updated to match the new slug
 * Removed `load_plugin_textdomain()` (WordPress.org language packs)
 * Valid Plugin URI; direct-access guards on plugin PHP files

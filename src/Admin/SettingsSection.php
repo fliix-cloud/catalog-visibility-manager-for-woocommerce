@@ -54,7 +54,7 @@ class SettingsSection {
 	 * @return array<string, string>
 	 */
 	public function add_section( array $sections ): array {
-		$sections[ self::SECTION_ID ] = __( 'Hide from categories', 'catalog-visibility-manager-for-woocommerce' );
+		$sections[ self::SECTION_ID ] = __( 'Hide from categories', 'fliix-category-product-hide-for-woocommerce' );
 		return $sections;
 	}
 
@@ -74,11 +74,11 @@ class SettingsSection {
 
 		return [
 			[
-				'title' => __( 'Hide from categories', 'catalog-visibility-manager-for-woocommerce' ),
+				'title' => __( 'Hide from categories', 'fliix-category-product-hide-for-woocommerce' ),
 				'type'  => 'title',
 				'desc'  => __(
 					'Use one list for all product categories. Choose whether to hide the category itself, hide products in that category, or both. Categories with the same name are distinguished by their parent path.',
-					'catalog-visibility-manager-for-woocommerce'
+					'fliix-category-product-hide-for-woocommerce'
 				),
 				'id'    => 'fliix_hcp_options',
 			],
@@ -108,19 +108,9 @@ class SettingsSection {
 	 */
 	public function save_settings(): void {
 		// Capability is enforced by WooCommerce settings pages (manage_woocommerce).
-		// phpcs:disable WordPress.Security.NonceVerification.Missing -- WC settings form nonce already verified.
-		$all_terms = isset( $_POST['fliix_hcp_all_terms'] ) && is_array( $_POST['fliix_hcp_all_terms'] )
-			? array_map( absint(...), wp_unslash( $_POST['fliix_hcp_all_terms'] ) )
-			: [];
-
-		$hide_cats = isset( $_POST['fliix_hcp_hide_category'] ) && is_array( $_POST['fliix_hcp_hide_category'] )
-			? array_map( absint(...), wp_unslash( $_POST['fliix_hcp_hide_category'] ) )
-			: [];
-
-		$hide_products = isset( $_POST['fliix_hcp_hide_products'] ) && is_array( $_POST['fliix_hcp_hide_products'] )
-			? array_map( absint(...), wp_unslash( $_POST['fliix_hcp_hide_products'] ) )
-			: [];
-		// phpcs:enable WordPress.Security.NonceVerification.Missing
+		$all_terms     = $this->get_posted_term_ids( 'fliix_hcp_all_terms' );
+		$hide_cats     = $this->get_posted_term_ids( 'fliix_hcp_hide_category' );
+		$hide_products = $this->get_posted_term_ids( 'fliix_hcp_hide_products' );
 
 		$this->options->save_bulk( $all_terms, $hide_cats, $hide_products );
 	}
@@ -152,5 +142,22 @@ class SettingsSection {
 			is_file( $js_path ) ? (string) filemtime( $js_path ) : $version,
 			true
 		);
+	}
+
+	/**
+	 * Read and sanitize a posted list of product category term IDs.
+	 *
+	 * @return list<int>
+	 */
+	private function get_posted_term_ids( string $field_name ): array {
+		// phpcs:disable WordPress.Security.NonceVerification.Missing -- WC settings form nonce already verified before this save hook runs.
+		if ( ! isset( $_POST[ $field_name ] ) || ! is_array( $_POST[ $field_name ] ) ) {
+			return [];
+		}
+
+		$posted = array_map( 'absint', wp_unslash( $_POST[ $field_name ] ) );
+		// phpcs:enable WordPress.Security.NonceVerification.Missing
+
+		return array_values( array_unique( array_filter( $posted ) ) );
 	}
 }

@@ -86,7 +86,7 @@ class Plugin {
 		echo '<div class="notice notice-error"><p>';
 		echo esc_html__(
 			'Catalog Visibility Manager for WooCommerce requires WooCommerce to be installed and active.',
-			'catalog-visibility-manager-for-woocommerce'
+			'fliix-catalog-visibility-manager-for-woocommerce'
 		);
 		echo '</p></div>';
 	}

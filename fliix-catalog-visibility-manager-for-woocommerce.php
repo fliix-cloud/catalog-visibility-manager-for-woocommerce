@@ -41,7 +41,7 @@ if ( version_compare( PHP_VERSION, '8.1', '<' ) ) {
 				esc_html(
 					sprintf(
 						/* translators: 1: required PHP version, 2: current PHP version */
-						__( 'Catalog Visibility Manager for WooCommerce requires PHP %1$s or higher. You are running PHP %2$s.', 'catalog-visibility-manager-for-woocommerce' ),
+						__( 'Catalog Visibility Manager for WooCommerce requires PHP %1$s or higher. You are running PHP %2$s.', 'fliix-catalog-visibility-manager-for-woocommerce' ),
 						'8.1',
 						PHP_VERSION
 					)

@@ -1,0 +1,131 @@
+# English (United States) catalog — source language reference for contributors.
+# Copyright (C) 2025 fliix - Marc Werner
+# This file is distributed under the same license as the plugin package.
+#
+# Note: WordPress uses the English strings in PHP as defaults when the site
+# language is en_US. This file documents every string for translators and PRs.
+msgid ""
+msgstr ""
+"Project-Id-Version: Catalog Visibility Manager for WooCommerce 2.2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/catalog-visibility-manager-for-woocommerce/\n"
+"POT-Creation-Date: 2025-01-01 00:00+0000\n"
+"PO-Revision-Date: 2025-01-01 00:00+0000\n"
+"Last-Translator: fliix - Marc Werner\n"
+"Language-Team: English (United States)\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: catalog-visibility-manager-for-woocommerce\n"
+"X-Generator: manual\n"
+
+#: catalog-visibility-manager-for-woocommerce.php
+#, php-format
+msgid "Catalog Visibility Manager for WooCommerce requires PHP %1$s or higher. You are running PHP %2$s."
+msgstr "Catalog Visibility Manager for WooCommerce requires PHP %1$s or higher. You are running PHP %2$s."
+
+#: src/Plugin.php
+msgid "Catalog Visibility Manager for WooCommerce requires WooCommerce to be installed and active."
+msgstr "Catalog Visibility Manager for WooCommerce requires WooCommerce to be installed and active."
+
+#: src/Admin/SettingsSection.php
+msgid "Hide from categories"
+msgstr "Hide from categories"
+
+#: src/Admin/SettingsSection.php
+msgid "Use one list for all product categories. Choose whether to hide the category itself, hide products in that category, or both. Categories with the same name are distinguished by their parent path."
+msgstr "Use one list for all product categories. Choose whether to hide the category itself, hide products in that category, or both. Categories with the same name are distinguished by their parent path."
+
+#: src/Admin/CategoryTreeRenderer.php
+msgid "Search categories"
+msgstr "Search categories"
+
+#: src/Admin/CategoryTreeRenderer.php
+msgid "Search categories…"
+msgstr "Search categories…"
+
+#: src/Admin/CategoryTreeRenderer.php
+msgid "Show only hidden"
+msgstr "Show only hidden"
+
+#: src/Admin/CategoryTreeRenderer.php
+#: src/Admin/TaxonomyColumns.php
+msgid "Category"
+msgstr "Category"
+
+#: src/Admin/CategoryTreeRenderer.php
+msgid "Hide this category from the store"
+msgstr "Hide this category from the store"
+
+#: src/Admin/CategoryTreeRenderer.php
+msgid "Hide category"
+msgstr "Hide category"
+
+#: src/Admin/CategoryTreeRenderer.php
+msgid "Hide products in this category from the store"
+msgstr "Hide products in this category from the store"
+
+#: src/Admin/CategoryTreeRenderer.php
+msgid "Hide products"
+msgstr "Hide products"
+
+#: src/Admin/CategoryTreeRenderer.php
+msgid "No product categories found."
+msgstr "No product categories found."
+
+#: src/Admin/CategoryTreeRenderer.php
+msgid "No categories match your search."
+msgstr "No categories match your search."
+
+#. translators: %s: category name
+#: src/Admin/CategoryTreeRenderer.php
+#, php-format
+msgid "Hide category: %s"
+msgstr "Hide category: %s"
+
+#. translators: %s: category name
+#: src/Admin/CategoryTreeRenderer.php
+#, php-format
+msgid "Hide products in: %s"
+msgstr "Hide products in: %s"
+
+#: src/Admin/TaxonomyColumns.php
+msgid "Products"
+msgstr "Products"
+
+#: src/Admin/TaxonomyColumns.php
+msgid "Hidden"
+msgstr "Hidden"
+
+#: src/Admin/TaxonomyColumns.php
+msgid "Shown"
+msgstr "Shown"
+
+#: src/Admin/TaxonomyColumns.php
+msgid "Hidden — click to show"
+msgstr "Hidden — click to show"
+
+#: src/Admin/TaxonomyColumns.php
+msgid "Shown — click to hide"
+msgstr "Shown — click to hide"
+
+#: src/Admin/TaxonomyColumns.php
+msgid "You do not have permission to change these settings."
+msgstr "You do not have permission to change these settings."
+
+#: src/Admin/TaxonomyColumns.php
+msgid "Forbidden"
+msgstr "Forbidden"
+
+#: src/Admin/TaxonomyColumns.php
+msgid "Invalid request."
+msgstr "Invalid request."
+
+#: src/Admin/TaxonomyColumns.php
+msgid "Error"
+msgstr "Error"
+
+#: src/Admin/TaxonomyColumns.php
+msgid "Category not found."
+msgstr "Category not found."

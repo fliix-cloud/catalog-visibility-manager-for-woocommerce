@@ -1,0 +1,43 @@
+{
+  "name": "fliix-cloud/catalog-visibility-manager-for-woocommerce",
+  "description": "Catalog Visibility Manager for WooCommerce: control storefront category and product visibility with a searchable admin tree.",
+  "version": "2.2.0",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "wordpress",
+    "woocommerce",
+    "product-categories",
+    "hide-products",
+    "catalog-visibility",
+    "storefront",
+    "ecommerce"
+  ],
+  "homepage": "https://www.fliix.cloud",
+  "support": {
+    "issues": "https://wordpress.org/support/plugin/catalog-visibility-manager-for-woocommerce/",
+    "source": "https://www.fliix.cloud"
+  },
+  "authors": [
+    {
+      "name": "fliix - Marc Werner",
+      "homepage": "https://www.fliix.cloud",
+      "role": "Maintainer"
+    },
+    {
+      "name": "N.O.U.S. Open Useful and Simple",
+      "role": "Original author"
+    }
+  ],
+  "require": {
+    "php": ">=8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Fliix\\HideCategoriesProducts\\": "src/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  }
+}

@@ -62,19 +62,19 @@ class CategoryTreeRenderer {
 				<div class="fliix-hcp" id="fliix-hcp-tree-root" data-fliix-hcp-tree>
 					<div class="fliix-hcp__toolbar">
 						<label class="screen-reader-text" for="fliix-hcp-search">
-							<?php esc_html_e( 'Search categories', 'fliix-category-product-hide-for-woocommerce' ); ?>
+							<?php esc_html_e( 'Search categories', 'catalog-visibility-manager-for-woocommerce' ); ?>
 						</label>
 						<input
 							type="search"
 							id="fliix-hcp-search"
 							class="fliix-hcp__search regular-text"
-							placeholder="<?php esc_attr_e( 'Search categories…', 'fliix-category-product-hide-for-woocommerce' ); ?>"
+							placeholder="<?php esc_attr_e( 'Search categories…', 'catalog-visibility-manager-for-woocommerce' ); ?>"
 							autocomplete="off"
 						/>
 						<div class="fliix-hcp__toolbar-actions">
 							<label class="fliix-hcp__filter-hidden">
 								<input type="checkbox" class="fliix-hcp__show-hidden-only" />
-								<?php esc_html_e( 'Show only hidden', 'fliix-category-product-hide-for-woocommerce' ); ?>
+								<?php esc_html_e( 'Show only hidden', 'catalog-visibility-manager-for-woocommerce' ); ?>
 							</label>
 						</div>
 					</div>
@@ -82,19 +82,19 @@ class CategoryTreeRenderer {
 					<div class="fliix-hcp__body">
 						<div class="fliix-hcp__header" aria-hidden="true">
 							<span class="fliix-hcp__col fliix-hcp__col--name">
-								<?php esc_html_e( 'Category', 'fliix-category-product-hide-for-woocommerce' ); ?>
+								<?php esc_html_e( 'Category', 'catalog-visibility-manager-for-woocommerce' ); ?>
 							</span>
-							<span class="fliix-hcp__col fliix-hcp__col--toggle" title="<?php esc_attr_e( 'Hide this category from the store', 'fliix-category-product-hide-for-woocommerce' ); ?>">
-								<?php esc_html_e( 'Hide category', 'fliix-category-product-hide-for-woocommerce' ); ?>
+							<span class="fliix-hcp__col fliix-hcp__col--toggle" title="<?php esc_attr_e( 'Hide this category from the store', 'catalog-visibility-manager-for-woocommerce' ); ?>">
+								<?php esc_html_e( 'Hide category', 'catalog-visibility-manager-for-woocommerce' ); ?>
 							</span>
-							<span class="fliix-hcp__col fliix-hcp__col--toggle" title="<?php esc_attr_e( 'Hide products in this category from the store', 'fliix-category-product-hide-for-woocommerce' ); ?>">
-								<?php esc_html_e( 'Hide products', 'fliix-category-product-hide-for-woocommerce' ); ?>
+							<span class="fliix-hcp__col fliix-hcp__col--toggle" title="<?php esc_attr_e( 'Hide products in this category from the store', 'catalog-visibility-manager-for-woocommerce' ); ?>">
+								<?php esc_html_e( 'Hide products', 'catalog-visibility-manager-for-woocommerce' ); ?>
 							</span>
 						</div>
 
 						<?php if ( [] === $this->terms_by_id ) : ?>
 							<p class="fliix-hcp__empty">
-								<?php esc_html_e( 'No product categories found.', 'fliix-category-product-hide-for-woocommerce' ); ?>
+								<?php esc_html_e( 'No product categories found.', 'catalog-visibility-manager-for-woocommerce' ); ?>
 							</p>
 						<?php else : ?>
 							<ul class="fliix-hcp__tree">
@@ -103,7 +103,7 @@ class CategoryTreeRenderer {
 						<?php endif; ?>
 
 						<p class="fliix-hcp__empty fliix-hcp__no-results" hidden>
-							<?php esc_html_e( 'No categories match your search.', 'fliix-category-product-hide-for-woocommerce' ); ?>
+							<?php esc_html_e( 'No categories match your search.', 'catalog-visibility-manager-for-woocommerce' ); ?>
 						</p>
 					</div>
 				</div>
@@ -193,7 +193,7 @@ class CategoryTreeRenderer {
 						<?php
 						printf(
 							/* translators: %s: category name */
-							esc_html__( 'Hide category: %s', 'fliix-category-product-hide-for-woocommerce' ),
+							esc_html__( 'Hide category: %s', 'catalog-visibility-manager-for-woocommerce' ),
 							esc_html( $term->name )
 						);
 						?>
@@ -211,7 +211,7 @@ class CategoryTreeRenderer {
 						<?php
 						printf(
 							/* translators: %s: category name */
-							esc_html__( 'Hide products in: %s', 'fliix-category-product-hide-for-woocommerce' ),
+							esc_html__( 'Hide products in: %s', 'catalog-visibility-manager-for-woocommerce' ),
 							esc_html( $term->name )
 						);
 						?>

@@ -7,7 +7,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Catalog Visibility Manager for WooCommerce 2.2.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/fliix-category-product-hide-for-woocommerce/\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/catalog-visibility-manager-for-woocommerce/\n"
 "POT-Creation-Date: 2025-01-01 00:00+0000\n"
 "PO-Revision-Date: 2025-01-01 00:00+0000\n"
 "Last-Translator: fliix - Marc Werner\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Domain: fliix-category-product-hide-for-woocommerce\n"
+"X-Domain: catalog-visibility-manager-for-woocommerce\n"
 "X-Generator: manual\n"
 
 #: catalog-visibility-manager-for-woocommerce.php

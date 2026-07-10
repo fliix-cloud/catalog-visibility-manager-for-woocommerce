@@ -4,7 +4,7 @@
  *
  * Usage:
  *   php bin/compile-mo.php
- *   php bin/compile-mo.php languages/fliix-category-product-hide-for-woocommerce-de_DE.po
+ *   php bin/compile-mo.php languages/catalog-visibility-manager-for-woocommerce-de_DE.po
  *
  * @package Fliix\HideCategoriesProducts
  */

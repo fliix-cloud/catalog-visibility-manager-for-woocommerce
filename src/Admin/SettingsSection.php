@@ -54,7 +54,7 @@ class SettingsSection {
 	 * @return array<string, string>
 	 */
 	public function add_section( array $sections ): array {
-		$sections[ self::SECTION_ID ] = __( 'Hide from categories', 'fliix-category-product-hide-for-woocommerce' );
+		$sections[ self::SECTION_ID ] = __( 'Hide from categories', 'catalog-visibility-manager-for-woocommerce' );
 		return $sections;
 	}
 
@@ -74,11 +74,11 @@ class SettingsSection {
 
 		return [
 			[
-				'title' => __( 'Hide from categories', 'fliix-category-product-hide-for-woocommerce' ),
+				'title' => __( 'Hide from categories', 'catalog-visibility-manager-for-woocommerce' ),
 				'type'  => 'title',
 				'desc'  => __(
 					'Use one list for all product categories. Choose whether to hide the category itself, hide products in that category, or both. Categories with the same name are distinguished by their parent path.',
-					'fliix-category-product-hide-for-woocommerce'
+					'catalog-visibility-manager-for-woocommerce'
 				),
 				'id'    => 'fliix_hcp_options',
 			],

@@ -47,14 +47,14 @@ class TaxonomyColumns {
 		foreach ( $columns as $key => $label ) {
 			$new[ $key ] = $label;
 			if ( 'name' === $key ) {
-				$new['fliix_hcp_visibility']         = __( 'Category', 'fliix-category-product-hide-for-woocommerce' );
-				$new['fliix_hcp_product_visibility'] = __( 'Products', 'fliix-category-product-hide-for-woocommerce' );
+				$new['fliix_hcp_visibility']         = __( 'Category', 'catalog-visibility-manager-for-woocommerce' );
+				$new['fliix_hcp_product_visibility'] = __( 'Products', 'catalog-visibility-manager-for-woocommerce' );
 			}
 		}
 
 		if ( ! isset( $new['fliix_hcp_visibility'] ) ) {
-			$new['fliix_hcp_visibility']         = __( 'Category', 'fliix-category-product-hide-for-woocommerce' );
-			$new['fliix_hcp_product_visibility'] = __( 'Products', 'fliix-category-product-hide-for-woocommerce' );
+			$new['fliix_hcp_visibility']         = __( 'Category', 'catalog-visibility-manager-for-woocommerce' );
+			$new['fliix_hcp_product_visibility'] = __( 'Products', 'catalog-visibility-manager-for-woocommerce' );
 		}
 
 		return $new;
@@ -88,8 +88,8 @@ class TaxonomyColumns {
 		if ( ! current_user_can( 'manage_woocommerce' ) ) {
 			$icon  = $is_hidden ? 'dashicons-hidden' : 'dashicons-visibility';
 			$label = $is_hidden
-				? __( 'Hidden', 'fliix-category-product-hide-for-woocommerce' )
-				: __( 'Shown', 'fliix-category-product-hide-for-woocommerce' );
+				? __( 'Hidden', 'catalog-visibility-manager-for-woocommerce' )
+				: __( 'Shown', 'catalog-visibility-manager-for-woocommerce' );
 
 			return sprintf(
 				'<span class="dashicons %1$s" title="%2$s"><span class="screen-reader-text">%2$s</span></span>',
@@ -101,8 +101,8 @@ class TaxonomyColumns {
 		$action_type = $is_hidden ? 'show' : 'hide';
 		$icon        = $is_hidden ? 'dashicons-hidden' : 'dashicons-visibility';
 		$label       = $is_hidden
-			? __( 'Hidden — click to show', 'fliix-category-product-hide-for-woocommerce' )
-			: __( 'Shown — click to hide', 'fliix-category-product-hide-for-woocommerce' );
+			? __( 'Hidden — click to show', 'catalog-visibility-manager-for-woocommerce' )
+			: __( 'Shown — click to hide', 'catalog-visibility-manager-for-woocommerce' );
 
 		ob_start();
 		?>
@@ -127,8 +127,8 @@ class TaxonomyColumns {
 	public function handle_toggle(): void {
 		if ( ! current_user_can( 'manage_woocommerce' ) ) {
 			wp_die(
-				esc_html__( 'You do not have permission to change these settings.', 'fliix-category-product-hide-for-woocommerce' ),
-				esc_html__( 'Forbidden', 'fliix-category-product-hide-for-woocommerce' ),
+				esc_html__( 'You do not have permission to change these settings.', 'catalog-visibility-manager-for-woocommerce' ),
+				esc_html__( 'Forbidden', 'catalog-visibility-manager-for-woocommerce' ),
 				[ 'response' => 403 ]
 			);
 		}
@@ -147,8 +147,8 @@ class TaxonomyColumns {
 			|| ! wp_verify_nonce( $nonce, self::ACTION . '_' . $term_id )
 		) {
 			wp_die(
-				esc_html__( 'Invalid request.', 'fliix-category-product-hide-for-woocommerce' ),
-				esc_html__( 'Error', 'fliix-category-product-hide-for-woocommerce' ),
+				esc_html__( 'Invalid request.', 'catalog-visibility-manager-for-woocommerce' ),
+				esc_html__( 'Error', 'catalog-visibility-manager-for-woocommerce' ),
 				[ 'response' => 400 ]
 			);
 		}
@@ -156,8 +156,8 @@ class TaxonomyColumns {
 		$term = get_term( $term_id, 'product_cat' );
 		if ( ! $term instanceof WP_Term ) {
 			wp_die(
-				esc_html__( 'Category not found.', 'fliix-category-product-hide-for-woocommerce' ),
-				esc_html__( 'Error', 'fliix-category-product-hide-for-woocommerce' ),
+				esc_html__( 'Category not found.', 'catalog-visibility-manager-for-woocommerce' ),
+				esc_html__( 'Error', 'catalog-visibility-manager-for-woocommerce' ),
 				[ 'response' => 404 ]
 			);
 		}

@@ -4,7 +4,7 @@ Tags: woocommerce, product categories, catalog visibility, hide products, storef
 Requires at least: 5.8
 Tested up to: 7.0
 Requires PHP: 8.1
-Stable tag: 2.2.0
+Stable tag: 2.2.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -88,7 +88,7 @@ Contact the maintainer privately (see Author URI) rather than posting exploit de
 
 = 2.2.0 =
 
-* Rename to **Catalog Visibility Manager for WooCommerce** (distinctive name; WordPress.org slug `fliix-category-product-hide-for-woocommerce`)
+* Rename to **Catalog Visibility Manager for WooCommerce** (distinctive name; WordPress.org slug `catalog-visibility-manager-for-woocommerce`)
 * Text domain updated to match the new slug
 * Removed `load_plugin_textdomain()` (WordPress.org language packs)
 * Valid Plugin URI; direct-access guards on plugin PHP files

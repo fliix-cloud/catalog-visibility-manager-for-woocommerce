@@ -1,10 +1,10 @@
-# German translation for Catalog Visibility Manager for WooCommerce
+# German translation for fliix Catalog Visibility Manager for WooCommerce
 # Copyright (C) 2025 fliix - Marc Werner
-# This file is distributed under the same license as the plugin package.
+# This file is distributed under the same license as the fliix Catalog Visibility Manager for WooCommerce package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Catalog Visibility Manager for WooCommerce 2.2.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/catalog-visibility-manager-for-woocommerce/\n"
+"Project-Id-Version: fliix Catalog Visibility Manager for WooCommerce 2.2.2\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/fliix-catalog-visibility-manager-for-woocommerce/\n"
 "POT-Creation-Date: 2025-01-01 00:00+0000\n"
 "PO-Revision-Date: 2025-01-01 00:00+0000\n"
 "Last-Translator: fliix - Marc Werner\n"
@@ -14,10 +14,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Domain: catalog-visibility-manager-for-woocommerce\n"
+"X-Domain: fliix-catalog-visibility-manager-for-woocommerce\n"
 "X-Generator: manual\n"
 
-#: catalog-visibility-manager-for-woocommerce.php
+#: fliix-catalog-visibility-manager-for-woocommerce.php
 #, php-format
 msgid "Catalog Visibility Manager for WooCommerce requires PHP %1$s or higher. You are running PHP %2$s."
 msgstr "„Catalog Visibility Manager for WooCommerce“ benötigt PHP %1$s oder höher. Sie verwenden PHP %2$s."

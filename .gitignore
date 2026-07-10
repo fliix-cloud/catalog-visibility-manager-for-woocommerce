@@ -2,3 +2,4 @@
 /vendor/composer/
 .idea
 build-release.ps1
+mcps

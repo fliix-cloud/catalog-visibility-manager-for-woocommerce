@@ -9,7 +9,7 @@
  * Author URI:        https://www.fliix.cloud
  * License:           GPLv2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       catalog-visibility-manager-for-woocommerce
+ * Text Domain:       fliix-catalog-visibility-manager-for-woocommerce
  * Domain Path:       /languages
  * Requires Plugins:  woocommerce
  * WC requires at least: 5.0

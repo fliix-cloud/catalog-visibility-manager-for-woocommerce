@@ -1,16 +1,17 @@
+
 # Translations
 
 This plugin ships language files so communities can improve and add locales via **pull requests**.
 
 | File | Purpose |
 |------|---------|
-| `catalog-visibility-manager-for-woocommerce.pot` | **Template** – all source strings (English). Start new languages from this file. |
-| `catalog-visibility-manager-for-woocommerce-en_US.po` | English (source reference catalog) |
-| `catalog-visibility-manager-for-woocommerce-en_US.mo` | Compiled English (optional; site language `en_US` usually uses PHP source strings) |
-| `catalog-visibility-manager-for-woocommerce-de_DE.po` | German (editable) |
-| `catalog-visibility-manager-for-woocommerce-de_DE.mo` | German (compiled – required at runtime) |
+| `fliix-catalog-visibility-manager-for-woocommerce.pot` | **Template** – all source strings (English). Start new languages from this file. |
+| `fliix-catalog-visibility-manager-for-woocommerce-en_US.po` | English (source reference catalog) |
+| `fliix-catalog-visibility-manager-for-woocommerce-en_US.mo` | Compiled English (optional; site language `en_US` usually uses PHP source strings) |
+| `fliix-catalog-visibility-manager-for-woocommerce-de_DE.po` | German (editable) |
+| `fliix-catalog-visibility-manager-for-woocommerce-de_DE.mo` | German (compiled – required at runtime) |
 
-**Text domain:** `catalog-visibility-manager-for-woocommerce`  
+**Text domain:** `fliix-catalog-visibility-manager-for-woocommerce`  
 **Domain path:** `/languages`
 
 ---
@@ -18,7 +19,7 @@ This plugin ships language files so communities can improve and add locales via 
 ## How WordPress picks a language
 
 1. Site language is set under **Settings → General** (e.g. `Deutsch` → `de_DE`).
-2. The plugin loads `languages/catalog-visibility-manager-for-woocommerce-{locale}.mo`.
+2. The plugin loads `languages/fliix-catalog-visibility-manager-for-woocommerce-{locale}.mo`.
 3. If no matching file exists, English strings from the PHP source are shown.
 
 ---
@@ -29,8 +30,8 @@ This plugin ships language files so communities can improve and add locales via 
 
 ```bash
 # Example: French (France)
-cp languages/catalog-visibility-manager-for-woocommerce.pot \
-   languages/catalog-visibility-manager-for-woocommerce-fr_FR.po
+cp languages/fliix-catalog-visibility-manager-for-woocommerce.pot \
+   languages/fliix-catalog-visibility-manager-for-woocommerce-fr_FR.po
 ```
 
 ### 2. Edit the header
@@ -74,22 +75,22 @@ From the plugin root (PHP only, no gettext install required):
 ```bash
 php bin/compile-mo.php
 # or only one file:
-php bin/compile-mo.php languages/catalog-visibility-manager-for-woocommerce-fr_FR.po
+php bin/compile-mo.php languages/fliix-catalog-visibility-manager-for-woocommerce-fr_FR.po
 ```
 
 If you have GNU gettext installed:
 
 ```bash
-msgfmt -o languages/catalog-visibility-manager-for-woocommerce-fr_FR.mo \
-       languages/catalog-visibility-manager-for-woocommerce-fr_FR.po
+msgfmt -o languages/fliix-catalog-visibility-manager-for-woocommerce-fr_FR.mo \
+       languages/fliix-catalog-visibility-manager-for-woocommerce-fr_FR.po
 ```
 
 ### 5. Open a pull request
 
 Include both:
 
-- `languages/catalog-visibility-manager-for-woocommerce-{locale}.po`
-- `languages/catalog-visibility-manager-for-woocommerce-{locale}.mo`
+- `languages/fliix-catalog-visibility-manager-for-woocommerce-{locale}.po`
+- `languages/fliix-catalog-visibility-manager-for-woocommerce-{locale}.mo`
 
 Describe the locale and any strings you were unsure about.
 
@@ -99,7 +100,7 @@ Describe the locale and any strings you were unsure about.
 
 When new English strings are added to the plugin:
 
-1. Maintainers refresh `catalog-visibility-manager-for-woocommerce.pot`.
+1. Maintainers refresh `fliix-catalog-visibility-manager-for-woocommerce.pot`.
 2. Translators merge new strings into their `.po` (Poedit “Update from POT”, or manually).
 3. Recompile `.mo` and open a PR.
 
@@ -107,7 +108,7 @@ When new English strings are added to the plugin:
 
 ## Improve German or English
 
-- **German:** edit `catalog-visibility-manager-for-woocommerce-de_DE.po`, run `php bin/compile-mo.php`, PR both files.
+- **German:** edit `fliix-catalog-visibility-manager-for-woocommerce-de_DE.po`, run `php bin/compile-mo.php`, PR both files.
 - **English source:** change the string in PHP (`__()`, `esc_html__()`, …) **and** update `.pot` + all `.po` files. English UI text lives in code; `en_US.po` is a mirror for translators.
 
 ---
@@ -115,8 +116,8 @@ When new English strings are added to the plugin:
 ## File naming rules
 
 ```text
-catalog-visibility-manager-for-woocommerce-{locale}.po
-catalog-visibility-manager-for-woocommerce-{locale}.mo
+fliix-catalog-visibility-manager-for-woocommerce-{locale}.po
+fliix-catalog-visibility-manager-for-woocommerce-{locale}.mo
 ```
 
 | Correct | Incorrect |

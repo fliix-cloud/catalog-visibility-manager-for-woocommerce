@@ -141,27 +141,21 @@ class OptionsRepository {
 			return $this->excluded_term_taxonomy_ids = [];
 		}
 
-		$terms = get_terms(
+		$tt_ids = get_terms(
 			[
 				'taxonomy'   => 'product_cat',
-				'hide_empty' => false,
 				'include'    => $term_ids,
+				'hide_empty' => false,
+				'fields'     => 'tt_ids',
 			]
 		);
 
-		if ( is_wp_error( $terms ) || ! is_array( $terms ) ) {
+		if ( is_wp_error( $tt_ids ) || ! is_array( $tt_ids ) ) {
 			return $this->excluded_term_taxonomy_ids = [];
 		}
 
-		$tt_ids = [];
-		foreach ( $terms as $term ) {
-			if ( $term instanceof \WP_Term ) {
-				$tt_ids[] = absint( $term->term_taxonomy_id );
-			}
-		}
-
 		return $this->excluded_term_taxonomy_ids = array_values(
-			array_unique( array_map( absint(...), is_array( $tt_ids ) ? $tt_ids : [] ) )
+			array_unique( array_map( absint(...), $tt_ids ) )
 		);
 	}
 

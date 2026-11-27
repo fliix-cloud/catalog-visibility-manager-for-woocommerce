@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       fliix Catalog Visibility Manager for WooCommerce
  * Description:       Control which product categories and products appear on your WooCommerce storefront. Searchable category tree with separate hide controls.
- * Version:           2.2.3
+ * Version:           2.2.4
  * Requires at least: 5.8
  * Requires PHP:      8.1
  * Author:            fliix - Marc Werner
